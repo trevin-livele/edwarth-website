@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
   </head>
   <!-- Header Section -->
   <header>
@@ -44,156 +45,655 @@
       </div>
     </div>
   </header>
-  <body></body>
-
-
-      <!-- Footer -->
-    <footer>
+  <body>
+    <!-- Project Gallery Section -->
+    <section id="gallery" class="gallery-section">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-about">
-            <div class="footer-logo">
-              <img src="/api/placeholder/200/80" alt="Edwarth Logo" />
-            </div>
-            <p>
-              Edwarth Engineering & Construction Limited is a Kenyan
-              incorporated company dedicated to providing high-quality
-              engineering and construction services to various sectors.
-            </p>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="footer-links-container">
-            <h3 class="footer-title">Quick Links</h3>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="clients.html">Our Clients</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-services">
-            <h3 class="footer-title">Our Services</h3>
-            <ul class="footer-links">
-              <li><a href="services.html">Power Substations</a></li>
-              <li><a href="services.html">Civil Engineering</a></li>
-              <li><a href="services.html">Building Construction</a></li>
-              <li><a href="services.html">Project Management</a></li>
-              <li><a href="services.html">Telecom Infrastructure</a></li>
-              <li><a href="services.html">Road Construction</a></li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <h3 class="footer-title">Contact Info</h3>
-            <div class="contact-info">
-              <p>
-                <i class="fas fa-map-marker-alt"></i> Eastern Bypass, Rupa
-                House-Opposite GSU, P.O. Box 100563 (00100), Nairobi
-              </p>
-            </div>
-            <div class="contact-info">
-              <p>
-                <i class="fas fa-phone"></i> +254-724-736-832, +254-721-290-179
-              </p>
-            </div>
-            <div class="contact-info">
-              <p><i class="fas fa-envelope"></i> edwarthengconsltd@gmail.com</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2025 Edwarth Engineering & Construction Ltd. All Rights
-            Reserved.
+        <div class="section-header">
+          <h2 class="section-title">Our Project Gallery</h2>
+          <p class="section-subtitle">
+            Explore our completed projects across various sectors
           </p>
         </div>
-      </div>
-    </footer>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">
-      <i class="fas fa-arrow-up"></i>
+        <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all">
+            All Projects
+          </button>
+          <button class="filter-btn" data-filter="power">
+            Power Substations
+          </button>
+          <button class="filter-btn" data-filter="civil">
+            Civil Engineering
+          </button>
+          <button class="filter-btn" data-filter="building">
+            Building Construction
+          </button>
+          <button class="filter-btn" data-filter="telecom">
+            Telecom Infrastructure
+          </button>
+          <button class="filter-btn" data-filter="road">
+            Road Construction
+          </button>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Power Substations -->
+          <div class="gallery-item power" data-category="power">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery1.jpg"
+                alt="Power Substation Project 1"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Power Substation Installation</h3>
+                  <p>Nairobi County, 2024</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item power" data-category="power">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery2.jpg"
+                alt="Power Substation Project 2"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>33/11 kV Substation</h3>
+                  <p>Mombasa, 2023</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Civil Engineering -->
+          <div class="gallery-item civil" data-category="civil">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery3.jpg"
+                alt="Civil Engineering Project 1"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Water Treatment Facility</h3>
+                  <p>Nakuru, 2024</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item civil" data-category="civil">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery4.jpg"
+                alt="Civil Engineering Project 2"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Bridge Construction</h3>
+                  <p>Kisumu, 2023</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Building Construction -->
+          <div class="gallery-item building" data-category="building">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery5.jpg"
+                alt="Building Construction Project 1"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Commercial Complex</h3>
+                  <p>Nairobi CBD, 2024</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item building" data-category="building">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery6.jpg"
+                alt="Building Construction Project 2"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Residential Apartments</h3>
+                  <p>Westlands, 2023</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Telecom Infrastructure -->
+          <div class="gallery-item telecom" data-category="telecom">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery7.jpg"
+                alt="Telecom Infrastructure Project 1"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Communication Tower</h3>
+                  <p>Mt. Kenya Region, 2024</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item telecom" data-category="telecom">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery8.jpg"
+                alt="Telecom Infrastructure Project 2"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Fiber Optic Network</h3>
+                  <p>Eldoret, 2023</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Road Construction -->
+          <div class="gallery-item road" data-category="road">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery9.jpg"
+                alt="Road Construction Project 1"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Highway Expansion</h3>
+                  <p>Mombasa Road, 2024</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item road" data-category="road">
+            <div class="gallery-item-inner">
+              <img
+                src="./assets/images/gallery/gallery10.jpg"
+                alt="Road Construction Project 2"
+              />
+              <div class="overlay">
+                <div class="overlay-content">
+                  <h3>Urban Road Network</h3>
+                  <p>Thika, 2023</p>
+                  <button class="view-project-btn">
+                    <i class="fas fa-search-plus"></i> View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="load-more-container">
+          <button class="load-more-btn">Load More Projects</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+          <div class="modal-gallery">
+            <div class="main-image">
+              <img
+                id="modal-main-image"
+                src="./assets/images/gallery/gallery18.jpg"
+                alt="Project Image"
+              />
+            </div>
+            <div class="thumbnail-container">
+              <div class="thumbnail active">
+                <img src="./assets/images/gallery/gallery11.jpg" alt="Thumbnail 1" />
+              </div>
+              <div class="thumbnail">
+                <img src="./assets/images/gallery/gallery12.jpg" alt="Thumbnail 2" />
+              </div>
+              <div class="thumbnail">
+                <img src="./assets/images/gallery/gallery13.jpg" alt="Thumbnail 3" />
+              </div>
+              <div class="thumbnail">
+                <img src="./assets/images/gallery/gallery14.jpg" alt="Thumbnail 4" />
+              </div>
+            </div>
+          </div>
+          <div class="project-details">
+            <h2 id="modal-project-title">Project Title</h2>
+            <div class="project-meta">
+              <div class="meta-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span id="modal-project-location">Project Location</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span id="modal-project-date">Completion Date</span>
+              </div>
+              <div class="meta-item">
+                <i class="fas fa-tag"></i>
+                <span id="modal-project-category">Project Category</span>
+              </div>
+            </div>
+            <div class="project-description">
+              <h3>Project Overview</h3>
+              <p id="modal-project-description">
+                Detailed project description will appear here. This section
+                showcases the key features, challenges, and accomplishments of
+                the project. It highlights Edwarth Engineering & Construction's
+                expertise and approach to delivering successful outcomes.
+              </p>
+            </div>
+            <div class="project-features">
+              <h3>Key Features</h3>
+              <ul id="modal-project-features">
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-      <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Mobile Menu Toggle
-            $('.mobile-menu-btn').click(function() {
-                $('.nav-links').toggleClass('active');
-                $(this).find('i').toggleClass('fa-bars fa-times');
+      // Gallery Filtering
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const modal = document.getElementById("project-modal");
+        const viewProjectBtns = document.querySelectorAll(".view-project-btn");
+        const closeModal = document.querySelector(".close-modal");
+        const thumbnails = document.querySelectorAll(".thumbnail");
+        const modalMainImage = document.getElementById("modal-main-image");
+        const loadMoreBtn = document.querySelector(".load-more-btn");
+
+        // Filter gallery items
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all buttons
+            filterBtns.forEach((btn) => {
+              btn.classList.remove("active");
             });
-            
-            // Sticky Header
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $('header').addClass('scrolled');
-                    $('.scroll-top').addClass('active');
-                } else {
-                    $('header').removeClass('scrolled');
-                    $('.scroll-top').removeClass('active');
-                }
-                
-                // Animate elements on scroll
-                $('.animated').each(function() {
-                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
-                        $(this).addClass('show');
-                    }
-                });
+
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            // Get filter value
+            const filterValue = this.getAttribute("data-filter");
+
+            // Filter gallery items
+            galleryItems.forEach((item) => {
+              if (
+                filterValue === "all" ||
+                item.getAttribute("data-category") === filterValue
+              ) {
+                item.classList.remove("hide");
+                item.classList.add("animate__animated", "animate__fadeIn");
+              } else {
+                item.classList.add("hide");
+                item.classList.remove("animate__animated", "animate__fadeIn");
+              }
             });
-            
-            // Scroll to Top
-            $('.scroll-top').click(function() {
-                $('html, body').animate({scrollTop: 0}, 800);
-                return false;
-            });
-            
-            // Counter Animation
-            $('.stat-number').each(function() {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).attr('data-target')
-                }, {
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function(now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-            
-            // Smooth Scrolling for Anchor Links
-            $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(e) {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        e.preventDefault();
-                        $('html, body').animate({
-                            scrollTop: target.offset().top - 70
-                        }, 800);
-                        return false;
-                    }
-                }
-            });
-            
-            // Add active class to current page in navigation
-            var path = window.location.pathname;
-            var page = path.split("/").pop();
-            
-            if (page === "" || page === "index.html") {
-                $('.nav-links a[href="index.html"]').addClass('active');
-            } else {
-                $('.nav-links a[href="' + page + '"]').addClass('active');
-            }
+          });
         });
+
+        // Open modal
+        viewProjectBtns.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Get project details from the gallery item
+            const galleryItem = this.closest(".gallery-item");
+            const projectTitle = galleryItem.querySelector("h3").textContent;
+            const projectLocation = galleryItem
+              .querySelector("p")
+              .textContent.split(",")[0];
+            const projectDate = galleryItem
+              .querySelector("p")
+              .textContent.split(",")[1]
+              .trim();
+            const projectCategory = galleryItem.getAttribute("data-category");
+
+            // Set modal content
+            document.getElementById("modal-project-title").textContent =
+              projectTitle;
+            document.getElementById("modal-project-location").textContent =
+              projectLocation;
+            document.getElementById("modal-project-date").textContent =
+              projectDate;
+            document.getElementById("modal-project-category").textContent =
+              projectCategory.charAt(0).toUpperCase() +
+              projectCategory.slice(1);
+
+            // Update modal image
+            modalMainImage.src = galleryItem.querySelector("img").src;
+
+            // Show modal
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+        // Close modal
+        closeModal.addEventListener("click", function () {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        // Thumbnail click
+        thumbnails.forEach((thumbnail) => {
+          thumbnail.addEventListener("click", function () {
+            // Remove active class from all thumbnails
+            thumbnails.forEach((thumb) => {
+              thumb.classList.remove("active");
+            });
+
+            // Add active class to clicked thumbnail
+            this.classList.add("active");
+
+            // Update main image
+            modalMainImage.src = this.querySelector("img").src;
+          });
+        });
+
+        // Load More button (simulation)
+        let isLoaded = false;
+        loadMoreBtn.addEventListener("click", function () {
+          if (!isLoaded) {
+            // Clone existing gallery items
+            const clonedItems = Array.from(galleryItems).map((item) => {
+              const clone = item.cloneNode(true);
+              return clone;
+            });
+
+            // Append cloned items to gallery
+            const galleryGrid = document.querySelector(".gallery-grid");
+            clonedItems.forEach((item) => {
+              galleryGrid.appendChild(item);
+            });
+
+            // Update button text
+            loadMoreBtn.textContent = "No More Projects";
+            isLoaded = true;
+
+            // Add event listeners to new view project buttons
+            document.querySelectorAll(".view-project-btn").forEach((btn) => {
+              btn.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Get project details from the gallery item
+                const galleryItem = this.closest(".gallery-item");
+                const projectTitle =
+                  galleryItem.querySelector("h3").textContent;
+                const projectLocation = galleryItem
+                  .querySelector("p")
+                  .textContent.split(",")[0];
+                const projectDate = galleryItem
+                  .querySelector("p")
+                  .textContent.split(",")[1]
+                  .trim();
+                const projectCategory =
+                  galleryItem.getAttribute("data-category");
+
+                // Set modal content
+                document.getElementById("modal-project-title").textContent =
+                  projectTitle;
+                document.getElementById("modal-project-location").textContent =
+                  projectLocation;
+                document.getElementById("modal-project-date").textContent =
+                  projectDate;
+                document.getElementById("modal-project-category").textContent =
+                  projectCategory.charAt(0).toUpperCase() +
+                  projectCategory.slice(1);
+
+                // Update modal image
+                modalMainImage.src = galleryItem.querySelector("img").src;
+
+                // Show modal
+                modal.style.display = "block";
+                document.body.style.overflow = "hidden";
+              });
+            });
+          } else {
+            // Disable button
+            loadMoreBtn.disabled = true;
+          }
+        });
+
+        // Add scroll animation
+        window.addEventListener("scroll", function () {
+          const gallerySection = document.querySelector(".gallery-section");
+          const sectionPosition = gallerySection.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.3;
+
+          if (sectionPosition < screenPosition) {
+            gallerySection.classList.add(
+              "animate__animated",
+              "animate__fadeIn"
+            );
+          }
+        });
+      });
     </script>
+  </body>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="/api/placeholder/200/80" alt="Edwarth Logo" />
+          </div>
+          <p>
+            Edwarth Engineering & Construction Limited is a Kenyan incorporated
+            company dedicated to providing high-quality engineering and
+            construction services to various sectors.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-links-container">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-services">
+          <h3 class="footer-title">Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Power Substations</a></li>
+            <li><a href="services.html">Civil Engineering</a></li>
+            <li><a href="services.html">Building Construction</a></li>
+            <li><a href="services.html">Project Management</a></li>
+            <li><a href="services.html">Telecom Infrastructure</a></li>
+            <li><a href="services.html">Road Construction</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-title">Contact Info</h3>
+          <div class="contact-info">
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Eastern Bypass, Rupa
+              House-Opposite GSU, P.O. Box 100563 (00100), Nairobi
+            </p>
+          </div>
+          <div class="contact-info">
+            <p>
+              <i class="fas fa-phone"></i> +254-724-736-832, +254-721-290-179
+            </p>
+          </div>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> edwarthengconsltd@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Edwarth Engineering & Construction Ltd. All Rights
+          Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Mobile Menu Toggle
+      $(".mobile-menu-btn").click(function () {
+        $(".nav-links").toggleClass("active");
+        $(this).find("i").toggleClass("fa-bars fa-times");
+      });
+
+      // Sticky Header
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+          $("header").addClass("scrolled");
+          $(".scroll-top").addClass("active");
+        } else {
+          $("header").removeClass("scrolled");
+          $(".scroll-top").removeClass("active");
+        }
+
+        // Animate elements on scroll
+        $(".animated").each(function () {
+          if (
+            $(this).offset().top <
+            $(window).scrollTop() + $(window).height() - 100
+          ) {
+            $(this).addClass("show");
+          }
+        });
+      });
+
+      // Scroll to Top
+      $(".scroll-top").click(function () {
+        $("html, body").animate({ scrollTop: 0 }, 800);
+        return false;
+      });
+
+      // Counter Animation
+      $(".stat-number").each(function () {
+        $(this)
+          .prop("Counter", 0)
+          .animate(
+            {
+              Counter: $(this).attr("data-target"),
+            },
+            {
+              duration: 2000,
+              easing: "swing",
+              step: function (now) {
+                $(this).text(Math.ceil(now));
+              },
+            }
+          );
+      });
+
+      // Smooth Scrolling for Anchor Links
+      $('a[href*="#"]')
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function (e) {
+          if (
+            location.pathname.replace(/^\//, "") ==
+              this.pathname.replace(/^\//, "") &&
+            location.hostname == this.hostname
+          ) {
+            var target = $(this.hash);
+            target = target.length
+              ? target
+              : $("[name=" + this.hash.slice(1) + "]");
+            if (target.length) {
+              e.preventDefault();
+              $("html, body").animate(
+                {
+                  scrollTop: target.offset().top - 70,
+                },
+                800
+              );
+              return false;
+            }
+          }
+        });
+
+      // Add active class to current page in navigation
+      var path = window.location.pathname;
+      var page = path.split("/").pop();
+
+      if (page === "" || page === "index.html") {
+        $('.nav-links a[href="index.html"]').addClass("active");
+      } else {
+        $('.nav-links a[href="' + page + '"]').addClass("active");
+      }
+    });
+  </script>
 </html>
