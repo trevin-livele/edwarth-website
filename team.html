@@ -3,130 +3,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edwarth Engineering & Construction</title>
+    <title>Our Team - Edwarth Engineering & Construction</title>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+    <link rel="stylesheet" href="./css/team.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
-  <div id="header-placeholder"></div>
+  <body>
+    <div id="header-placeholder"></div>
 
-  <body></body>
+    <section class="team-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Meet Our Expert Team</h2>
+          <p>
+            Our leadership team brings decades of combined experience in
+            engineering and construction, driving innovation and excellence in
+            every project we undertake.
+          </p>
+        </div>
 
-<div id="footer-placeholder"></div>
+        <div class="team-grid">
+          <!-- Edwin Karani -->
+          <div class="team-card" id="edwin-card">
+            <div class="team-header">
+              <div class="team-avatar">
+                <img
+                  src="./assets/images/edwin-karani.jpg"
+                  alt="Edwin Karani"
+                  onerror="this.src='https://via.placeholder.com/120x120/0066a4/ffffff?text=EK'"
+                />
+              </div>
+              <h3 class="team-name">Edwin Karani</h3>
+              <p class="team-title">Director & Lead Engineer</p>
+              <div class="team-experience">
+                <i class="fas fa-award"></i>
+                20+ Years Experience
+              </div>
+            </div>
 
+            <div class="team-content">
+              <div class="team-bio">
+                Edwin Karani is a director at Edwarth Engineering and
+                Construction company with vast knowledge and experience in the
+                construction industry, having worked for more than 20 years. His
+                experience and expertise gained from working with various
+                organizations and from his academic years at The Technical
+                University of Kenya has been vital in his day-to-day management
+                of various construction projects the company is undertaking.
+                Edwin has a track record of commitment, professionalism and
+                dedication in his previous work engagements.
+              </div>
 
-<script>
-    // Load header and footer
-    Promise.all([
-      fetch('header.html').then(response => response.text()),
-      fetch('footer.html').then(response => response.text())
-    ]).then(([headerData, footerData]) => {
-      document.getElementById('header-placeholder').innerHTML = headerData;
-      document.getElementById('footer-placeholder').innerHTML = footerData;
-      
-      // Set active navigation based on current page
-      setActiveNavigation();
-    });
+              <div class="experience-list">
+                <div class="experience-title">
+                  <i class="fas fa-building"></i>
+                  Previous Organizations
+                </div>
+                <div class="experience-companies">
+                  <span class="company-tag">Steel Tech Engineering Ltd</span>
+                  <span class="company-tag">Iberdrola Engineering</span>
+                  <span class="company-tag">Fafi Integrated Development</span>
+                  <span class="company-tag">Maianga Technologies Ltd</span>
+                  <span class="company-tag">ELMELEK Engineering</span>
+                  <span class="company-tag">Brolaz East Africa</span>
+                  <span class="company-tag">Steel Structures Ltd</span>
+                </div>
+              </div>
 
-    function setActiveNavigation() {
-      // Get current page name from URL
-      const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
-      
-      // Remove active class from all nav links
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
+              <div class="specialties">
+                <div class="specialties-title">Specialties</div>
+                <div class="specialty-tags">
+                  <span class="specialty-tag">Project Management</span>
+                  <span class="specialty-tag">Site Management</span>
+                  <span class="specialty-tag">Engineering Design</span>
+                  <span class="specialty-tag">Construction Planning</span>
+                </div>
+              </div>
+
+              <div class="team-actions">
+                <button class="btn-expand" onclick="toggleExpand('edwin-card')">
+                  <span class="expand-text">Read More</span>
+                </button>
+                <button
+                  class="btn-contact"
+                  onclick="contactTeamMember('Edwin Karani')"
+                >
+                  <i class="fas fa-envelope"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arthur Benard Atsiaya -->
+          <div class="team-card" id="arthur-card">
+            <div class="team-header">
+              <div class="team-avatar">
+                <img
+                  src="./assets/images/arthur-atsiaya.jpg"
+                  alt="Arthur Benard Atsiaya"
+                  onerror="this.src='https://via.placeholder.com/120x120/0066a4/ffffff?text=AA'"
+                />
+              </div>
+              <h3 class="team-name">Arthur Benard Atsiaya</h3>
+              <p class="team-title">Director & Senior Civil Engineer</p>
+              <div class="team-experience">
+                <i class="fas fa-award"></i>
+                20+ Years Experience
+              </div>
+            </div>
+
+            <div class="team-content">
+              <div class="team-bio">
+                Arthur is a director at Edwarth Engineering and Construction
+                company and a Civil Engineer with more than 20 years experience.
+                Since his graduation at The Technical University of Kenya, he
+                has worked with a number of organizations as a Civil Engineer
+                and Civil Works supervisor both in Kenya and internationally.
+                Arthur's years of working with various organizations has given
+                him a competitive advantage and has been instrumental in his
+                position as a director and senior Civil Engineer.
+              </div>
+
+              <div class="experience-list">
+                <div class="experience-title">
+                  <i class="fas fa-building"></i>
+                  Previous Organizations
+                </div>
+                <div class="experience-companies">
+                  <span class="company-tag">Links Communication Systems</span>
+                  <span class="company-tag">RA International (Somalia)</span>
+                  <span class="company-tag">Brolaz East Africa Ltd</span>
+                  <span class="company-tag">ZTE Kenya Freelance</span>
+                  <span class="company-tag">Net Plan East Africa</span>
+                  <span class="company-tag">Uganda Steelworks</span>
+                  <span class="company-tag">Steel Structures Ltd</span>
+                  <span class="company-tag">Arjan Shankla & Partners</span>
+                  <span class="company-tag">Kenya Wildlife Services</span>
+                </div>
+              </div>
+
+              <div class="specialties">
+                <div class="specialties-title">Specialties</div>
+                <div class="specialty-tags">
+                  <span class="specialty-tag">Civil Engineering</span>
+                  <span class="specialty-tag">Project Planning</span>
+                  <span class="specialty-tag">Building Design</span>
+                  <span class="specialty-tag">Construction Drawings</span>
+                  <span class="specialty-tag">Professional Computing</span>
+                </div>
+              </div>
+
+              <div class="team-actions">
+                <button
+                  class="btn-expand"
+                  onclick="toggleExpand('arthur-card')"
+                >
+                  <span class="expand-text">Read More</span>
+                </button>
+                <button
+                  class="btn-contact"
+                  onclick="contactTeamMember('Arthur Benard Atsiaya')"
+                >
+                  <i class="fas fa-envelope"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+      // Load header and footer
+      Promise.all([
+        fetch("header.html").then((response) => response.text()),
+        fetch("footer.html").then((response) => response.text()),
+      ]).then(([headerData, footerData]) => {
+        document.getElementById("header-placeholder").innerHTML = headerData;
+        document.getElementById("footer-placeholder").innerHTML = footerData;
+
+        // Set active navigation based on current page
+        setActiveNavigation();
       });
-      
-      // Add active class to current page link
-      const activeLink = document.querySelector(`[data-page="${currentPage}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
+
+      function setActiveNavigation() {
+        // Get current page name from URL
+        const currentPage =
+          window.location.pathname.split("/").pop().replace(".html", "") ||
+          "index";
+
+        // Remove active class from all nav links
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.classList.remove("active");
+        });
+
+        // Add active class to current page link
+        const activeLink = document.querySelector(
+          `[data-page="${currentPage}"]`
+        );
+        if (activeLink) {
+          activeLink.classList.add("active");
+        }
       }
-    }
-  </script>
+    </script>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top">
       <i class="fas fa-arrow-up"></i>
     </div>
 
-      <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            // Mobile Menu Toggle
-            $('.mobile-menu-btn').click(function() {
-                $('.nav-links').toggleClass('active');
-                $(this).find('i').toggleClass('fa-bars fa-times');
-            });
-            
-            // Sticky Header
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $('header').addClass('scrolled');
-                    $('.scroll-top').addClass('active');
-                } else {
-                    $('header').removeClass('scrolled');
-                    $('.scroll-top').removeClass('active');
-                }
-                
-                // Animate elements on scroll
-                $('.animated').each(function() {
-                    if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 100) {
-                        $(this).addClass('show');
-                    }
-                });
-            });
-            
-            // Scroll to Top
-            $('.scroll-top').click(function() {
-                $('html, body').animate({scrollTop: 0}, 800);
-                return false;
-            });
-            
-            // Counter Animation
-            $('.stat-number').each(function() {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).attr('data-target')
-                }, {
-                    duration: 2000,
-                    easing: 'swing',
-                    step: function(now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-            
-            // Smooth Scrolling for Anchor Links
-            $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(e) {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length) {
-                        e.preventDefault();
-                        $('html, body').animate({
-                            scrollTop: target.offset().top - 70
-                        }, 800);
-                        return false;
-                    }
-                }
-            });
-            
-            // Add active class to current page in navigation
-            var path = window.location.pathname;
-            var page = path.split("/").pop();
-            
-            if (page === "" || page === "index.html") {
-                $('.nav-links a[href="index.html"]').addClass('active');
-            } else {
-                $('.nav-links a[href="' + page + '"]').addClass('active');
-            }
+      function toggleExpand(cardId) {
+        const card = document.getElementById(cardId);
+        const btn = card.querySelector(".btn-expand");
+        const expandText = btn.querySelector(".expand-text");
+
+        card.classList.toggle("expanded");
+
+        if (card.classList.contains("expanded")) {
+          expandText.textContent = "Show Less";
+          btn.innerHTML =
+            '<i class="fas fa-chevron-up"></i> <span class="expand-text">Show Less</span>';
+        } else {
+          expandText.textContent = "Read More";
+          btn.innerHTML = '<span class="expand-text">Read More</span>';
+        }
+      }
+
+      function contactTeamMember(name) {
+        // Replace with actual contact functionality
+        alert(
+          `Contact form for ${name} would open here. You can integrate this with your contact system.`
+        );
+      }
+
+      // Add scroll animation for team cards
+      window.addEventListener("scroll", function () {
+        const cards = document.querySelectorAll(".team-card");
+        cards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (cardTop < windowHeight - 100) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }
         });
+      });
+
+      // Initialize cards with initial animation state
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".team-card");
+        cards.forEach((card, index) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(30px)";
+
+          setTimeout(() => {
+            card.style.transition = "all 0.6s ease";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, index * 200);
+        });
+      });
     </script>
+  </body>
 </html>
