@@ -1469,7 +1469,7 @@ header {
   margin-left: 20px;
 }
 .nav-links a {
-  color: #fff;
+  color: var(--primary);
   text-decoration: none;
 }
 .nav-links a.active {
