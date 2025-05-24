@@ -15,35 +15,8 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <!-- Header Section -->
-  <header>
-    <div class="container">
-      <div class="navbar">
-        <div class="logo">
-          <img
-            src="/api/placeholder/200/80"
-            alt="Edwarth Engineering & Construction"
-          />
-          <div class="logo-text">
-            <h1>EDWARTH</h1>
-            <span>ENGINEERING & CONSTRUCTION</span>
-          </div>
-        </div>
-        <div class="mobile-menu-btn">
-          <i class="fas fa-bars"></i>
-        </div>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="team.html">Our Team</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="clients.html">Our Clients</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+
   <body>
     <!-- Services Preview -->
     <section class="services-preview" id="services">
@@ -185,13 +158,37 @@
 
 
 <div id="footer-placeholder"></div>
+
+
 <script>
-fetch('footer.html')
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-  });
-</script>
+    // Load header and footer
+    Promise.all([
+      fetch('header.html').then(response => response.text()),
+      fetch('footer.html').then(response => response.text())
+    ]).then(([headerData, footerData]) => {
+      document.getElementById('header-placeholder').innerHTML = headerData;
+      document.getElementById('footer-placeholder').innerHTML = footerData;
+      
+      // Set active navigation based on current page
+      setActiveNavigation();
+    });
+
+    function setActiveNavigation() {
+      // Get current page name from URL
+      const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
+      
+      // Remove active class from all nav links
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      // Add active class to current page link
+      const activeLink = document.querySelector(`[data-page="${currentPage}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+  </script>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top">
