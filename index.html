@@ -66,6 +66,75 @@
         activeLink.classList.add('active');
       }
     }
+
+
+
+
+
+
+
+
+
+
+
+// Simple mobile menu functions
+function toggleMobileMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const btn = document.querySelector('.mobile-menu-btn i');
+  
+  if (!navLinks) return; // Safety check
+  
+  navLinks.classList.toggle('active');
+  
+  if (navLinks.classList.contains('active')) {
+    btn.className = 'fas fa-times';
+  } else {
+    btn.className = 'fas fa-bars';
+  }
+}
+
+// Close menu when clicking links
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.closest('.nav-links')) {
+    const navLinks = document.getElementById('navLinks');
+    const btn = document.querySelector('.mobile-menu-btn i');
+    
+    if (navLinks) {
+      navLinks.classList.remove('active');
+      if (btn) btn.className = 'fas fa-bars';
+    }
+  }
+});
+
+// Close menu on window resize
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) {
+    const navLinks = document.getElementById('navLinks');
+    const btn = document.querySelector('.mobile-menu-btn i');
+    
+    if (navLinks) {
+      navLinks.classList.remove('active');
+      if (btn) btn.className = 'fas fa-bars';
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </script>
 
 
