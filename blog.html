@@ -1,25 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edwarth Engineering & Construction</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <!-- Header Section -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Edwarth Engineering & Construction</title>
+<link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./css/blog.css">
+</head>
+      <!-- Header Section -->
   <div id="header-placeholder"></div>
+<body>
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Expert Insights & Construction Tips</h2>
+                <p>Stay informed with our latest articles on construction best practices, safety measures, and industry expertise from our experienced team.</p>
+            </div>
 
-  <body></body>
+            <div class="blog-filters">
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="safety">Safety</button>
+                <button class="filter-btn" data-filter="tips">Construction Tips</button>
+                <button class="filter-btn" data-filter="guides">Guides</button>
+            </div>
 
-<div id="footer-placeholder"></div>
+            <div class="blog-grid">
+                <!-- Blog Post 1: What to Look for When Looking for Construction Services -->
+                <article class="blog-card" data-category="tips guides" id="blog-1">
+                    <div class="blog-header">
+                        <i class="fas fa-search blog-icon"></i>
+                    </div>
+
+                    <div class="blog-meta">
+                        <span class="blog-category">Construction Guide</span>
+                        <div class="blog-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>May 15, 2025</span>
+                        </div>
+                        <div class="blog-author">
+                            <i class="fas fa-user"></i>
+                            <span>Edwarth Engineering Team</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3 class="blog-title">What to Look for When Choosing Construction Services</h3>
+                        
+                        <p class="blog-excerpt">
+                            Success of any building project is highly determined by the constructor or construction company you choose to work with. Stress-free and getting a high-quality experience is the desire of everyone looking to construct, therefore choosing a qualified constructor is a must.
+                        </p>
+
+                        <div class="blog-tags">
+                            <span class="blog-tag">Construction Tips</span>
+                            <span class="blog-tag">Contractor Selection</span>
+                            <span class="blog-tag">Quality Assurance</span>
+                        </div>
+
+                        <div class="blog-points">
+                            <h4><i class="fas fa-list-check"></i>Key Factors to Consider:</h4>
+                            <div class="blog-points-list">
+                                <div class="blog-point">
+                                    <div class="blog-point-title">1. Competence of Personnel</div>
+                                    <div class="blog-point-desc">Ensure the constructor can demonstrate required skills, expertise, knowledge and experience to carry out work safely and effectively.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">2. Health and Safety Policy</div>
+                                    <div class="blog-point-desc">A comprehensive document outlining the contractor's commitment to maintaining a safe and healthy work environment.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">3. Trade Association Membership</div>
+                                    <div class="blog-point-desc">Membership in reputable associations indicates commitment to professional standards, ethics and best practices.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">4. Experience with Similar Works</div>
+                                    <div class="blog-point-desc">Contractors with vast experience understand specific requirements, challenges, and best practices for your project type.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">5. Hazard Assessment & Control</div>
+                                    <div class="blog-point-desc">Systematic approach to identify, assess and implement control measures for project-specific hazards.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">6. Client Testimonials & Past Projects</div>
+                                    <div class="blog-point-desc">Review contractor's past projects to see quality of work, attention to details and project diversity.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">7. Project Management Approach</div>
+                                    <div class="blog-point-desc">Clear communication, regular updates and prompt addressing of concerns greatly impact timeline and cost control.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog-actions">
+                            <button class="btn-read-more" onclick="toggleExpand('blog-1')">
+                                <span class="expand-text">Read More</span>
+                            </button>
+                            <div class="blog-share">
+                                <button class="share-btn facebook" onclick="sharePost('facebook', 'Construction Services Guide')">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button class="share-btn twitter" onclick="sharePost('twitter', 'Construction Services Guide')">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                <button class="share-btn linkedin" onclick="sharePost('linkedin', 'Construction Services Guide')">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span>1,247 views</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>5 min read</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-share"></i>
+                            <span>23 shares</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2: Safety Measures in Construction Site -->
+                <article class="blog-card" data-category="safety" id="blog-2">
+                    <div class="blog-header">
+                        <i class="fas fa-hard-hat blog-icon"></i>
+                    </div>
+
+                    <div class="blog-meta">
+                        <span class="blog-category">Safety Guide</span>
+                        <div class="blog-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>May 10, 2025</span>
+                        </div>
+                        <div class="blog-author">
+                            <i class="fas fa-user"></i>
+                            <span>Edwarth Engineering Team</span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content">
+                        <h3 class="blog-title">Essential Safety Measures in Construction Sites</h3>
+                        
+                        <p class="blog-excerpt">
+                            Within the whirlwind of activities and creation of transforming your space, safety has to be your first priority. The building world witnesses thousands of injuries and fatalities, making safety measures the cornerstones of creating secure and productive sites.
+                        </p>
+
+                        <div class="blog-tags">
+                            <span class="blog-tag">Safety</span>
+                            <span class="blog-tag">Construction Site</span>
+                            <span class="blog-tag">Worker Protection</span>
+                        </div>
+
+                        <div class="blog-points">
+                            <h4><i class="fas fa-shield-alt"></i>Critical Safety Measures:</h4>
+                            <div class="blog-points-list">
+                                <div class="blog-point">
+                                    <div class="blog-point-title">1. Worker Training</div>
+                                    <div class="blog-point-desc">Train site workers on proper use of tools, equipment and materials. Provide daily briefings on hazards and precautions.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">2. Safety Procedures & Rules</div>
+                                    <div class="blog-point-desc">Establish emergency exits, fire assembly points, and install safety equipment like bells, extinguishers and alarms.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">3. Risk Control</div>
+                                    <div class="blog-point-desc">Put risks and dangers under control immediately when an alarm is raised or a risk is identified.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">4. Legal Compliance</div>
+                                    <div class="blog-point-desc">Constructor must follow and adhere to guidelines provided by legal authorities.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">5. Personal Protective Equipment</div>
+                                    <div class="blog-point-desc">Provide adequate PPE to all site workers and ensure proper usage.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">6. Equipment Safety</div>
+                                    <div class="blog-point-desc">Follow proper equipment and machinery safety procedures for all personnel.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">7. Clean Work Environment</div>
+                                    <div class="blog-point-desc">Maintain a clean and organized work environment to prevent accidents.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">8. Fall Protection</div>
+                                    <div class="blog-point-desc">Workers at heights must be provided with adequate fall protection measures.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">9. Hazardous Material Storage</div>
+                                    <div class="blog-point-desc">All hazardous materials should be stored properly and safely.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">10. Clear Signage</div>
+                                    <div class="blog-point-desc">Use clear signage throughout the site for safety and navigation.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">11. Entry & Exit Points</div>
+                                    <div class="blog-point-desc">Ensure properly marked entry and exit points for workers and heavy vehicles.</div>
+                                </div>
+                                <div class="blog-point">
+                                    <div class="blog-point-title">12. Equipment Inspection</div>
+                                    <div class="blog-point-desc">Inspect all equipment and machinery for defects before work begins each day.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="blog-actions">
+                            <button class="btn-read-more" onclick="toggleExpand('blog-2')">
+                                <span class="expand-text">Read More</span>
+                            </button>
+                            <div class="blog-share">
+                                <button class="share-btn facebook" onclick="sharePost('facebook', 'Construction Safety Guide')">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+                                <button class="share-btn twitter" onclick="sharePost('twitter', 'Construction Safety Guide')">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+                                <button class="share-btn linkedin" onclick="sharePost('linkedin', 'Construction Safety Guide')">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span>2,156 views</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>7 min read</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-share"></i>
+                            <span>45 shares</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="footer-placeholder"></div>
+
 
 <script>
     // Load header and footer
@@ -51,104 +281,100 @@
     }
   </script>
 
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">
-      <i class="fas fa-arrow-up"></i>
-    </div>
-
-
-
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Mobile Menu Toggle
-      $(".mobile-menu-btn").click(function () {
-        $(".nav-links").toggleClass("active");
-        $(this).find("i").toggleClass("fa-bars fa-times");
-      });
-
-      // Sticky Header
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-          $("header").addClass("scrolled");
-          $(".scroll-top").addClass("active");
-        } else {
-          $("header").removeClass("scrolled");
-          $(".scroll-top").removeClass("active");
+    <script>
+        // Blog functionality
+        function toggleExpand(blogId) {
+            const card = document.getElementById(blogId);
+            const btn = card.querySelector('.btn-read-more');
+            const expandText = btn.querySelector('.expand-text');
+            
+            card.classList.toggle('expanded');
+            
+            if (card.classList.contains('expanded')) {
+                expandText.textContent = 'Show Less';
+                btn.innerHTML = '<i class="fas fa-chevron-up"></i> <span class="expand-text">Show Less</span>';
+            } else {
+                expandText.textContent = 'Read More';
+                btn.innerHTML = '<span class="expand-text">Read More</span>';
+            }
         }
 
-        // Animate elements on scroll
-        $(".animated").each(function () {
-          if (
-            $(this).offset().top <
-            $(window).scrollTop() + $(window).height() - 100
-          ) {
-            $(this).addClass("show");
-          }
-        });
-      });
-
-      // Scroll to Top
-      $(".scroll-top").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, 800);
-        return false;
-      });
-
-      // Counter Animation
-      $(".stat-number").each(function () {
-        $(this)
-          .prop("Counter", 0)
-          .animate(
-            {
-              Counter: $(this).attr("data-target"),
-            },
-            {
-              duration: 2000,
-              easing: "swing",
-              step: function (now) {
-                $(this).text(Math.ceil(now));
-              },
+        function sharePost(platform, title) {
+            const url = window.location.href;
+            const text = `Check out this article: ${title}`;
+            
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                    break;
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+                    break;
             }
-          );
-      });
-
-      // Smooth Scrolling for Anchor Links
-      $('a[href*="#"]')
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function (e) {
-          if (
-            location.pathname.replace(/^\//, "") ==
-              this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-          ) {
-            var target = $(this.hash);
-            target = target.length
-              ? target
-              : $("[name=" + this.hash.slice(1) + "]");
-            if (target.length) {
-              e.preventDefault();
-              $("html, body").animate(
-                {
-                  scrollTop: target.offset().top - 70,
-                },
-                800
-              );
-              return false;
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
             }
-          }
+        }
+
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter cards
+                    blogCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category.includes(filter)) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Initialize cards with animation
+            blogCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
         });
 
-      // Add active class to current page in navigation
-      var path = window.location.pathname;
-      var page = path.split("/").pop();
-
-      if (page === "" || page === "index.html") {
-        $('.nav-links a[href="index.html"]').addClass("active");
-      } else {
-        $('.nav-links a[href="' + page + '"]').addClass("active");
-      }
-    });
-  </script>
+        // Scroll animation for blog cards
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.blog-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
 </html>
