@@ -46,76 +46,14 @@
   </header>
   <body></body>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-about">
-            <div class="footer-logo">
-              <img src="/api/placeholder/200/80" alt="Edwarth Logo" />
-            </div>
-            <p>
-              Edwarth Engineering & Construction Limited is a Kenyan
-              incorporated company dedicated to providing high-quality
-              engineering and construction services to various sectors.
-            </p>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-          </div>
-          <div class="footer-links-container">
-            <h3 class="footer-title">Quick Links</h3>
-            <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="team.html">Our Team</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="clients.html">Our Clients</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-services">
-            <h3 class="footer-title">Our Services</h3>
-            <ul class="footer-links">
-              <li><a href="services.html">Power Substations</a></li>
-              <li><a href="services.html">Civil Engineering</a></li>
-              <li><a href="services.html">Building Construction</a></li>
-              <li><a href="services.html">Project Management</a></li>
-              <li><a href="services.html">Telecom Infrastructure</a></li>
-              <li><a href="services.html">Road Construction</a></li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <h3 class="footer-title">Contact Info</h3>
-            <div class="contact-info">
-              <p>
-                <i class="fas fa-map-marker-alt"></i> Eastern Bypass, Rupa
-                House-Opposite GSU, P.O. Box 100563 (00100), Nairobi
-              </p>
-            </div>
-            <div class="contact-info">
-              <p>
-                <i class="fas fa-phone"></i> +254-724-736-832, +254-721-290-179
-              </p>
-            </div>
-            <div class="contact-info">
-              <p><i class="fas fa-envelope"></i> edwarthengconsltd@gmail.com</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2025 Edwarth Engineering & Construction Ltd. All Rights
-            Reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
+<div id="footer-placeholder"></div>
+<script>
+fetch('footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer-placeholder').innerHTML = data;
+  });
+</script>
 
     <!-- Scroll to Top Button -->
     <div class="scroll-top">
