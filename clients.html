@@ -1,58 +1,834 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edwarth Engineering & Construction</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <!-- Header Section -->
-  <div id="header-placeholder"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clients - Edwarth Engineering & Construction</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        :root {
+            --primary: #0066a4;
+            --secondary: #d35400;
+            --light: #f5f5f5;
+            --dark: #333333;
+            --gray: #777777;
+            --light-gray: #f0f0f0;
+        }
 
-<div id="footer-placeholder"></div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #fff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-<script>
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Clients Section Styles */
+        .clients-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .clients-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="client-pattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23000" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23client-pattern)"/></svg>');
+            pointer-events: none;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+        }
+
+        .section-header h2::after {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        .clients-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .client-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            transform: translateY(0);
+        }
+
+        .client-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .client-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .client-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .client-header {
+            padding: 30px 30px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-gray), #ffffff);
+            position: relative;
+        }
+
+        .client-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            position: relative;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .client-card:hover .client-logo {
+            transform: scale(1.05);
+            border-color: var(--secondary);
+        }
+
+        .client-logo img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .client-logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .client-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .client-card:hover .client-name {
+            color: var(--primary);
+        }
+
+        .client-type {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .client-content {
+            padding: 0 30px 30px;
+        }
+
+        .client-description {
+            font-size: 15px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .project-highlights {
+            margin-bottom: 25px;
+        }
+
+        .highlights-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .highlights-title i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .highlight-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .highlight-tag {
+            background: linear-gradient(135deg, var(--light-gray), #e9ecef);
+            color: var(--dark);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .highlight-tag:hover {
+            background: linear-gradient(135deg, var(--secondary), #e67e22);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .client-metrics {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+        }
+
+        .client-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .btn-contact {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-contact:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 84, 0, 0.3);
+        }
+
+        .btn-portfolio {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-portfolio:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Trust indicators */
+        .trust-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px 0;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .trust-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: var(--light-gray);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .trust-item:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .trust-item i {
+            font-size: 24px;
+            color: var(--secondary);
+        }
+
+        .trust-item:hover i {
+            color: white;
+        }
+
+        .trust-text {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .client-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .client-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .client-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .section-header p {
+                font-size: 16px;
+            }
+
+            .client-header,
+            .client-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .clients-stats {
+                gap: 20px;
+            }
+
+            .stat-item {
+                min-width: 120px;
+                padding: 15px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .trust-logos {
+                gap: 20px;
+            }
+
+            .trust-item {
+                padding: 10px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clients-section {
+                padding: 60px 0;
+            }
+
+            .client-header {
+                padding: 20px 15px 15px;
+            }
+
+            .client-content {
+                padding: 0 15px 20px;
+            }
+
+            .client-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .client-name {
+                font-size: 20px;
+            }
+
+            .client-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .clients-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <section class="clients-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Trusted Clients</h2>
+                <p>We are proud to have served leading organizations across Kenya, delivering exceptional engineering and construction solutions that exceed expectations.</p>
+            </div>
+
+            <div class="clients-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Major Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+
+            <div class="clients-grid">
+                <!-- Co-op Bank -->
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-logo">
+                            <div class="client-logo-placeholder">CB</div>
+                        </div>
+                        <h3 class="client-name">Co-op Bank</h3>
+                        <p class="client-type">Financial Institution</p>
+                    </div>
+
+                    <div class="client-content">
+                        <div class="client-description">
+                            One of Kenya's leading financial institutions, Co-op Bank has trusted Edwarth Engineering with critical infrastructure projects including power substations, electrical installations, and telecommunications infrastructure.
+                        </div>
+
+                        <div class="project-highlights">
+                            <div class="highlights-title">
+                                <i class="fas fa-star"></i>
+                                Project Highlights
+                            </div>
+                            <div class="highlight-tags">
+                                <span class="highlight-tag">Power Substations</span>
+                                <span class="highlight-tag">Electrical Systems</span>
+                                <span class="highlight-tag">Telecom Infrastructure</span>
+                                <span class="highlight-tag">Project Management</span>
+                            </div>
+                        </div>
+
+                        <div class="client-metrics">
+                            <div class="metric">
+                                <div class="metric-value">15+</div>
+                                <div class="metric-label">Projects</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">5</div>
+                                <div class="metric-label">Years</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Success Rate</div>
+                            </div>
+                        </div>
+
+                        <div class="client-actions">
+                            <a href="#" class="btn-contact">View Projects</a>
+                            <a href="#" class="btn-portfolio">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gracebrook Academy -->
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-logo">
+                            <div class="client-logo-placeholder">GA</div>
+                        </div>
+                        <h3 class="client-name">Gracebrook Academy</h3>
+                        <p class="client-type">Educational Institution</p>
+                    </div>
+
+                    <div class="client-content">
+                        <div class="client-description">
+                            Gracebrook Academy has partnered with Edwarth Engineering for comprehensive educational facility development, including building construction, electrical systems, and modern learning infrastructure.
+                        </div>
+
+                        <div class="project-highlights">
+                            <div class="highlights-title">
+                                <i class="fas fa-star"></i>
+                                Project Highlights
+                            </div>
+                            <div class="highlight-tags">
+                                <span class="highlight-tag">Building Construction</span>
+                                <span class="highlight-tag">Electrical Installation</span>
+                                <span class="highlight-tag">Safety Systems</span>
+                                <span class="highlight-tag">Modern Infrastructure</span>
+                            </div>
+                        </div>
+
+                        <div class="client-metrics">
+                            <div class="metric">
+                                <div class="metric-value">8+</div>
+                                <div class="metric-label">Projects</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">Years</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">On Time</div>
+                            </div>
+                        </div>
+
+                        <div class="client-actions">
+                            <a href="#" class="btn-contact">View Projects</a>
+                            <a href="#" class="btn-portfolio">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Private Clients -->
+                <div class="client-card">
+                    <div class="client-header">
+                        <div class="client-logo">
+                            <div class="client-logo-placeholder">PC</div>
+                        </div>
+                        <h3 class="client-name">Private Clients</h3>
+                        <p class="client-type">Residential & Commercial</p>
+                    </div>
+
+                    <div class="client-content">
+                        <div class="client-description">
+                            Our private clientele includes homeowners, property developers, and small businesses who trust Edwarth Engineering for personalized construction and engineering solutions tailored to their specific needs.
+                        </div>
+
+                        <div class="project-highlights">
+                            <div class="highlights-title">
+                                <i class="fas fa-star"></i>
+                                Service Areas
+                            </div>
+                            <div class="highlight-tags">
+                                <span class="highlight-tag">Residential Construction</span>
+                                <span class="highlight-tag">Home Electrical</span>
+                                <span class="highlight-tag">Commercial Buildings</span>
+                                <span class="highlight-tag">Custom Solutions</span>
+                            </div>
+                        </div>
+
+                        <div class="client-metrics">
+                            <div class="metric">
+                                <div class="metric-value">25+</div>
+                                <div class="metric-label">Projects</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Ongoing</div>
+                                <div class="metric-label">Partnership</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Satisfaction</div>
+                            </div>
+                        </div>
+
+                        <div class="client-actions">
+                            <a href="#" class="btn-contact">Get Quote</a>
+                            <a href="#" class="btn-portfolio">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-section">
+                <h3 class="trust-title">Why Clients Trust Edwarth Engineering</h3>
+                <div class="trust-logos">
+                    <div class="trust-item">
+                        <i class="fas fa-certificate"></i>
+                        <span class="trust-text">Certified Excellence</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-clock"></i>
+                        <span class="trust-text">On-Time Delivery</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="trust-text">Quality Assurance</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-handshake"></i>
+                        <span class="trust-text">Trusted Partnership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
     // Load header and footer
     Promise.all([
-      fetch('header.html').then(response => response.text()),
-      fetch('footer.html').then(response => response.text())
+      fetch("header.html").then((response) => response.text()),
+      fetch("footer.html").then((response) => response.text()),
     ]).then(([headerData, footerData]) => {
-      document.getElementById('header-placeholder').innerHTML = headerData;
-      document.getElementById('footer-placeholder').innerHTML = footerData;
-      
+      document.getElementById("header-placeholder").innerHTML = headerData;
+      document.getElementById("footer-placeholder").innerHTML = footerData;
+
       // Set active navigation based on current page
       setActiveNavigation();
     });
 
     function setActiveNavigation() {
       // Get current page name from URL
-      const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
-      
+      const currentPage =
+        window.location.pathname.split("/").pop().replace(".html", "") ||
+        "index";
+
       // Remove active class from all nav links
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.classList.remove("active");
       });
-      
+
       // Add active class to current page link
       const activeLink = document.querySelector(`[data-page="${currentPage}"]`);
       if (activeLink) {
-        activeLink.classList.add('active');
+        activeLink.classList.add("active");
       }
     }
-
-
-
     
-// Simple mobile menu functions
+    
+    // Add scroll animation for client cards
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.client-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize cards with initial animation state
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.client-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Animate stats on load
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const finalValue = stat.textContent;
+                stat.textContent = '0';
+                
+                setTimeout(() => {
+                    animateValue(stat, 0, parseInt(finalValue.replace(/\D/g, '')), 2000, finalValue);
+                }, 500);
+            });
+        });
+
+        function animateValue(element, start, end, duration, originalText) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                
+                if (originalText.includes('%')) {
+                    element.textContent = current + '%';
+                } else if (originalText.includes('+')) {
+                    element.textContent = current + '+';
+                } else {
+                    element.textContent = current;
+                }
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Interactive hover effects for highlight tags
+        document.querySelectorAll('.highlight-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+
+
+
+        // Simple mobile menu functions
 function toggleMobileMenu() {
   const navLinks = document.getElementById('navLinks');
   const btn = document.querySelector('.mobile-menu-btn i');
@@ -93,106 +869,6 @@ window.addEventListener('resize', function() {
     }
   }
 });
-
-  </script>
-
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">
-      <i class="fas fa-arrow-up"></i>
-    </div>
-
-
-  <!-- JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Mobile Menu Toggle
-      $(".mobile-menu-btn").click(function () {
-        $(".nav-links").toggleClass("active");
-        $(this).find("i").toggleClass("fa-bars fa-times");
-      });
-
-      // Sticky Header
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
-          $("header").addClass("scrolled");
-          $(".scroll-top").addClass("active");
-        } else {
-          $("header").removeClass("scrolled");
-          $(".scroll-top").removeClass("active");
-        }
-
-        // Animate elements on scroll
-        $(".animated").each(function () {
-          if (
-            $(this).offset().top <
-            $(window).scrollTop() + $(window).height() - 100
-          ) {
-            $(this).addClass("show");
-          }
-        });
-      });
-
-      // Scroll to Top
-      $(".scroll-top").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, 800);
-        return false;
-      });
-
-      // Counter Animation
-      $(".stat-number").each(function () {
-        $(this)
-          .prop("Counter", 0)
-          .animate(
-            {
-              Counter: $(this).attr("data-target"),
-            },
-            {
-              duration: 2000,
-              easing: "swing",
-              step: function (now) {
-                $(this).text(Math.ceil(now));
-              },
-            }
-          );
-      });
-
-      // Smooth Scrolling for Anchor Links
-      $('a[href*="#"]')
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function (e) {
-          if (
-            location.pathname.replace(/^\//, "") ==
-              this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-          ) {
-            var target = $(this.hash);
-            target = target.length
-              ? target
-              : $("[name=" + this.hash.slice(1) + "]");
-            if (target.length) {
-              e.preventDefault();
-              $("html, body").animate(
-                {
-                  scrollTop: target.offset().top - 70,
-                },
-                800
-              );
-              return false;
-            }
-          }
-        });
-
-      // Add active class to current page in navigation
-      var path = window.location.pathname;
-      var page = path.split("/").pop();
-
-      if (page === "" || page === "index.html") {
-        $('.nav-links a[href="index.html"]').addClass("active");
-      } else {
-        $('.nav-links a[href="' + page + '"]').addClass("active");
-      }
-    });
-  </script>
+    </script>
+</body>
 </html>
